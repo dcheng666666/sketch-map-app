@@ -6,7 +6,7 @@ Vite + React SPA for building hand-drawn China travel-route maps. Uses [`sketch-
 
 ## Live demo (GitHub Pages)
 
-A build of this app is published on **GitHub Pages**: **[https://dcheng666666.github.io/sketch-map-app/](https://dcheng666666.github.io/sketch-map-app/)**. Append **`#sample`** (for example [`…/sketch-map-app/#sample`](https://dcheng666666.github.io/sketch-map-app/#sample)) to load the bundled example route. Deployments run from GitHub Actions after the **CI** workflow succeeds on `main` (see [`.github/workflows/deploy.yml`](./.github/workflows/deploy.yml)).
+A build of this app is published on GitHub Pages as the **[live site](https://dcheng666666.github.io/sketch-map-app/)**. To load the bundled example route without searching, open **[sample route](https://dcheng666666.github.io/sketch-map-app/#sample)**. Deployments run from GitHub Actions after the **CI** workflow succeeds on `main` (see [`.github/workflows/deploy.yml`](./.github/workflows/deploy.yml)).
 
 ## Prerequisites
 
