@@ -1,6 +1,6 @@
 {
-  "title": "China East Coast Sample Route",
-  "description": "Test fixture: a classic place sequence from Beijing to Hangzhou for Sketch Map.",
+  "title": "China Sample Route",
+  "description": "Test fixture: a classic place sequence from Beijing to AnHui for Sketch Map.",
   "locations": [
     {
       "id": "sample-forbidden-city",
@@ -15,13 +15,6 @@
       "displayName": "Museum of Qin Terracotta Warriors, Lintong District, Xi'an, Shaanxi, China",
       "lat": 34.384992,
       "lng": 109.273362
-    },
-    {
-      "id": "sample-shanghai-bund",
-      "name": "The Bund",
-      "displayName": "The Bund, Huangpu District, Shanghai, China",
-      "lat": 31.239692,
-      "lng": 121.490989
     },
     {
       "id": "sample-west-lake",
