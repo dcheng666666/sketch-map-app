@@ -19,7 +19,7 @@ function App() {
   useEffect(() => {
     if (typeof window === "undefined") return;
     if (window.location.hash !== "#sample") return;
-    fetch("/sample-route.json")
+    fetch(`${import.meta.env.BASE_URL}sample-route.json`)
       .then((r) => r.json())
       .then((data: { title?: string; locations: Location[] }) => {
         if (data.locations) {
