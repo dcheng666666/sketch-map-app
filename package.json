@@ -19,7 +19,7 @@
     "react-dom": "^19.2.6",
     "react-leaflet": "^5.0.0",
     "roughjs": "^4.6.6",
-    "sketch-map-sdk": "0.1.1"
+    "sketch-map-sdk": "link:../sketch-map-sdk"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

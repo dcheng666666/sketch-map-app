@@ -12,13 +12,14 @@ function App() {
   const [locations, setLocations] = useState<Location[]>([]);
   const [title, setTitle] = useState("My Hand-Drawn Map");
   const [geoRenderError, setGeoRenderError] = useState<string | null>(null);
+  const [isExportingPng, setIsExportingPng] = useState(false);
 
   // Dev helper: when URL contains `#sample`, load the bundled fixture route so
   // the map can be visually verified without a Nominatim round-trip.
   useEffect(() => {
     if (typeof window === "undefined") return;
     if (window.location.hash !== "#sample") return;
-    fetch("/fixtures/sample-route.json")
+    fetch("/sample-route.json")
       .then((r) => r.json())
       .then((data: { title?: string; locations: Location[] }) => {
         if (data.locations) {
@@ -44,20 +45,27 @@ function App() {
   }, []);
 
   const handleExportPng = async () => {
-    const result = await renderRoute(
-      { locations, title },
-      { kind: "png", scale: 2 },
-    );
-    if (result.status === "error") {
-      setGeoRenderError(result.message);
-      return;
+    if (isExportingPng) return;
+
+    setIsExportingPng(true);
+    try {
+      const result = await renderRoute(
+        { locations, title },
+        { kind: "png", scale: 2 },
+      );
+      if (result.status === "error") {
+        setGeoRenderError(result.message);
+        return;
+      }
+      const url = URL.createObjectURL(result.png);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "hand-drawn-map.png";
+      a.click();
+      URL.revokeObjectURL(url);
+    } finally {
+      setIsExportingPng(false);
     }
-    const url = URL.createObjectURL(result.png);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "hand-drawn-map.png";
-    a.click();
-    URL.revokeObjectURL(url);
   };
 
   return (
@@ -75,8 +83,19 @@ function App() {
         title={title}
         onTitleChange={setTitle}
         onExportPng={handleExportPng}
-        disabled={locations.length === 0}
+        disabled={locations.length === 0 || isExportingPng}
+        isExporting={isExportingPng}
       />
+
+      {isExportingPng && (
+        <div className="export-overlay" role="status" aria-live="polite">
+          <div className="export-dialog">
+            <span className="export-spinner" aria-hidden="true" />
+            <strong>Preparing PNG...</strong>
+            <span>Rendering the hand-drawn map for download.</span>
+          </div>
+        </div>
+      )}
 
       <main className="app-main">
         <aside className="sidebar">

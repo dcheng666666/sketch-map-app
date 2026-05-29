@@ -29,7 +29,7 @@ export function PreviewApp() {
 
   useEffect(() => {
     let cancelled = false;
-    fetch("/fixtures/sample-route.json")
+    fetch("/sample-route.json")
       .then((r) => {
         if (!r.ok) throw new Error(`HTTP ${r.status}`);
         return r.json();
@@ -76,7 +76,7 @@ export function PreviewApp() {
       {error && (
         <div className="preview-error">
           Failed to load fixture: {error}. Make sure
-          <code> /fixtures/sample-route.json</code> exists.
+          <code> /sample-route.json</code> exists.
         </div>
       )}
 
@@ -180,7 +180,7 @@ export function PreviewApp() {
       </section>
 
       <footer className="preview-footer">
-        Loaded fixture: <code>/fixtures/sample-route.json</code>
+        Loaded fixture: <code>/sample-route.json</code>
         {fixture && ` · ${fixture.locations.length} locations`}
       </footer>
     </div>

@@ -3,6 +3,7 @@ interface Props {
   onTitleChange: (title: string) => void;
   onExportPng: () => void | Promise<void>;
   disabled: boolean;
+  isExporting: boolean;
 }
 
 export function Toolbar({
@@ -10,6 +11,7 @@ export function Toolbar({
   onTitleChange,
   onExportPng,
   disabled,
+  isExporting,
 }: Props) {
   return (
     <div className="toolbar">
@@ -25,7 +27,7 @@ export function Toolbar({
 
       <div className="toolbar-actions">
         <button type="button" onClick={onExportPng} disabled={disabled}>
-          Download PNG
+          {isExporting ? "Preparing..." : "Download PNG"}
         </button>
       </div>
     </div>
