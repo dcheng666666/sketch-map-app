@@ -1,0 +1,83 @@
+{
+  "title": "Wuhan-Sichuan-Chongqing Road Trip Loop",
+  "description": "Self-driving route: Wuhan -> Yichang -> Chongqing -> Yibin -> Leshan -> Mount Emei -> Dujiangyan -> Chengdu -> Wanzhou -> Jingzhou -> Wuhan.",
+  "locations": [
+    {
+      "id": "wuhan-loop-start",
+      "name": "武汉",
+      "displayName": "武汉市, 湖北省, 中国",
+      "lat": 30.5928,
+      "lng": 114.3055
+    },
+    {
+      "id": "yichang",
+      "name": "宜昌",
+      "displayName": "宜昌市, 湖北省, 中国",
+      "lat": 30.6919,
+      "lng": 111.2865
+    },
+    {
+      "id": "chongqing",
+      "name": "重庆",
+      "displayName": "重庆市, 中国",
+      "lat": 29.563,
+      "lng": 106.5516
+    },
+    {
+      "id": "yibin",
+      "name": "宜宾",
+      "displayName": "宜宾市, 四川省, 中国",
+      "lat": 28.7513,
+      "lng": 104.6417
+    },
+    {
+      "id": "leshan",
+      "name": "乐山",
+      "displayName": "乐山市, 四川省, 中国",
+      "lat": 29.5521,
+      "lng": 103.7656
+    },
+    {
+      "id": "mount-emei",
+      "name": "峨眉山",
+      "displayName": "峨眉山, 乐山市, 四川省, 中国",
+      "lat": 29.5183,
+      "lng": 103.3333
+    },
+    {
+      "id": "dujiangyan",
+      "name": "都江堰",
+      "displayName": "都江堰市, 成都市, 四川省, 中国",
+      "lat": 30.9884,
+      "lng": 103.6469
+    },
+    {
+      "id": "chengdu",
+      "name": "成都",
+      "displayName": "成都市, 四川省, 中国",
+      "lat": 30.5728,
+      "lng": 104.0668
+    },
+    {
+      "id": "wanzhou",
+      "name": "万州",
+      "displayName": "万州区, 重庆市, 中国",
+      "lat": 30.8079,
+      "lng": 108.4087
+    },
+    {
+      "id": "jingzhou",
+      "name": "荆州",
+      "displayName": "荆州市, 湖北省, 中国",
+      "lat": 30.3352,
+      "lng": 112.2397
+    },
+    {
+      "id": "wuhan-loop-end",
+      "name": "武汉",
+      "displayName": "武汉市, 湖北省, 中国",
+      "lat": 30.5928,
+      "lng": 114.3055
+    }
+  ]
+}
